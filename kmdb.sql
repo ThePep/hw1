@@ -64,17 +64,38 @@
 
 -- Turns column mode on but headers off
 .mode column
-.headers off
+.headers OFF
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
--- TODO!
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS top_cast;
 
 -- Create new tables, according to your domain model
--- TODO!
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    year INTEGER,
+    rating TEXT,
+    director TEXT
+);
+
+
+CREATE TABLE top_cast (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    actor TEXT,
+    character TEXT,
+    );
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
--- TODO!
+
+INSERT INTO movies (title, year, rating, director)
+VALUES ("Batman Begins", "2005", "PG-13", "Christopher Nolan");
+
+INSERT INTO top_cast (title, actor, character)
+VALUES ("Batman Begins", "Christian Bale", "Bruce Wayne");
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -94,23 +115,4 @@
 -- The SQL statement for the cast output
 -- TODO!
 
-DROP TABLE IF EXISTS movies;
-DROP TABLE IF EXISTS casting;
 
-CREATE TABLE movies (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
-    year INTEGER,
-    rating TEXT,
-    director TEXT
-);
-
-CREATE TABLE casting (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
-    actor TEXT,
-    persona TEXT,
-);
-
-INSERT INTO movies (title, year, rating, director,
-"Batman Begins", "2005", "PG-13", "Christopher Nolan");
