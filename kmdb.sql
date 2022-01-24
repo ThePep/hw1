@@ -160,6 +160,8 @@ FROM movies;
 .print ""
 
 
+.width 24 24 24
+
 -- The SQL statement for the cast output
 SELECT title, actor, persona
 FROM top_cast;
